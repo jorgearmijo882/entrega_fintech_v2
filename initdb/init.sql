@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS personas (
+  id SERIAL PRIMARY KEY,
+  nombre VARCHAR(100),
+  apellido VARCHAR(100)
+);

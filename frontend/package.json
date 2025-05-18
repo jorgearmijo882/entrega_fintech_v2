@@ -1,0 +1,9 @@
+{
+  "name": "fintech-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npx serve -l 3001"
+  },
+  "dependencies": {}
+}

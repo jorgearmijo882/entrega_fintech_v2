@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registro FinTech</title>
+</head>
+<body>
+  <h1>Registro de Persona</h1>
+  <form id="registroForm">
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre" name="nombre"><br><br>
+    <label for="apellido">Apellido:</label><br>
+    <input type="text" id="apellido" name="apellido"><br><br>
+    <input type="submit" value="Enviar">
+  </form>
+
+  <script>
+    document.getElementById('registroForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value;
+      const apellido = document.getElementById('apellido').value;
+      fetch('http://localhost:3000/registro', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nombre, apellido })
+      }).then(response => {
+        if (response.ok) {
+          alert('Registro exitoso');
+        } else {
+          alert('Error en el registro');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
